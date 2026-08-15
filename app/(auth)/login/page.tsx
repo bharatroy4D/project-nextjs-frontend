@@ -1,5 +1,4 @@
-
-
+import LoginForm from "../_component/page";
 
 export default function LoginPage() {
   return (
@@ -10,6 +9,9 @@ export default function LoginPage() {
           <h1 className="text-3xl font-bold">Wellcome back?</h1>
           <p className="text-gray-500 ">Enter your Credentials to access your account</p>
         </div>
+        
+        {/* LOGIN FORM */}
+        <LoginForm />
 
       </div>
     </div>
