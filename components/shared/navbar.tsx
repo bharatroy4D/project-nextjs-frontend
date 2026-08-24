@@ -3,7 +3,6 @@
 import Link from "next/link"
 import {
   Bell,
-  ChevronDown,
   CircleHelp,
   LogOut,
   Settings,
@@ -40,7 +39,7 @@ export function NavigationBar() {
           <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
             N
           </span>
-          Northstar
+          Next Js
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -59,12 +58,11 @@ export function NavigationBar() {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="inline-flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring sm:px-3">
+          <DropdownMenuTrigger className="inline-flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium outline-none transition-colors cursor-pointer sm:px-3">
             <span className="flex size-8 items-center justify-center rounded-full bg-secondary text-xs font-semibold text-secondary-foreground">
               JD
             </span>
-            <span className="hidden sm:inline">Jordan Davis</span>
-            <ChevronDown className="text-muted-foreground" data-icon="inline-end" />
+          
             <span className="sr-only">Open user menu</span>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">
