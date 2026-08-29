@@ -1,3 +1,4 @@
+import { NavigationBar } from '@/components/shared/navbar';
 import React from 'react';
 
 const AuthLayout = (
@@ -8,6 +9,7 @@ const AuthLayout = (
     }) => {
     return (
         <div className=''>
+            <NavigationBar/>
             {children}
         </div>
     );

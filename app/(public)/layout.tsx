@@ -1,7 +1,7 @@
 import { NavigationBar } from '@/components/shared/navbar';
 import React from 'react';
 
-const DashboardLayout = (
+const PublicLayout = (
     {
         children
     }: {
@@ -15,4 +15,4 @@ const DashboardLayout = (
     );
 };
 
-export default DashboardLayout;
+export default PublicLayout;

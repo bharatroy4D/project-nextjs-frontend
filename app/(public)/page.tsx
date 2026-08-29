@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { getMe } from "@/services/getMe";
 
-const page = () => {
+const HomePage = async () => {
+  const user = await getMe();
+  console.log(user);
   return (
-    <div>
+    <div className="flex gap-5 items-center justify-center pt-9">
       Hello Next js
       <Button>
         Click Me
@@ -11,4 +14,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default HomePage;
