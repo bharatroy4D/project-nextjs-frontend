@@ -1,15 +1,17 @@
-import { NavigationBar } from '@/components/shared/navbar';
+import { Navbar} from '@/components/shared/navbar';
+import { getMe } from '@/services/getMe';
 import React from 'react';
 
-const AuthLayout = (
+const AuthLayout = async (
     {
         children
     }: {
         children: React.ReactNode
     }) => {
+    const user =  getMe();
     return (
-        <div className=''>
-            <NavigationBar/>
+        <div>
+            <Navbar user={user} />
             {children}
         </div>
     );

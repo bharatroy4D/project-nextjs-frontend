@@ -25,7 +25,36 @@ const navItems = [
   { label: "Resources", href: "#resources" },
 ]
 
-export function NavigationBar() {
+
+type IUser = {
+  success: boolean,
+  message: string,
+  data: {
+    profile: {
+      id: string,
+      name: string,
+      email: string,
+      activeStatus: string,
+      role: string,
+      createdAt: string,
+      updated: string,
+      profile: {
+        id: string,
+        profilePhoto: string,
+        bio: string | null,
+        userId: string,
+        createdAt: string,
+        updated: string
+      }
+    }
+  }
+}
+
+type NavbarProps = {
+  user: IUser
+}
+
+export function Navbar({ user }: NavbarProps) {
   return (
     <header className="border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
       <nav
@@ -47,9 +76,8 @@ export function NavigationBar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground ${
-                index === 0 ? "bg-muted text-foreground" : "text-muted-foreground"
-              }`}
+              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground ${index === 0 ? "bg-muted text-foreground" : "text-muted-foreground"
+                }`}
               aria-current={index === 0 ? "page" : undefined}
             >
               {item.label}
@@ -62,14 +90,14 @@ export function NavigationBar() {
             <span className="flex size-8 items-center justify-center rounded-full bg-secondary text-xs font-semibold text-secondary-foreground">
               JD
             </span>
-          
+
             <span className="sr-only">Open user menu</span>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">
             <DropdownMenuGroup>
               <DropdownMenuLabel>
-                <p className="font-medium">Jordan Davis</p>
-                <p className="font-normal text-muted-foreground">jordan@example.com</p>
+                <p className="font-medium">{user.data?.profile.name || "User"}</p>
+                <p className="font-normal text-muted-foreground">{user.data?.profile.email || "user@example.com"}</p>
               </DropdownMenuLabel>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

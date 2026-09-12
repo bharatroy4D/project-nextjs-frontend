@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, DM_Sans, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
-import { NavigationBar } from "@/components/shared/navbar";
 
 const notoSerifHeading = Noto_Serif({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
-
   return (
     <html
       lang="en"

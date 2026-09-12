@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { getMe } from "@/services/getMe";
+// import { getMe } from "@/services/getMe";
 
 const HomePage = async () => {
-  const user = await getMe();
-  console.log(user);
+  // const user = await getMe();
   return (
     <div className="flex gap-5 items-center justify-center pt-9">
       Hello Next js
